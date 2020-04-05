@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 public class MongoDBConfig {
 
+    //TODO: already 1 Admin should automatically be made
     @Bean
     CommandLineRunner commandLineRunner(EmployeesRepository employeesRepository){
         return strings->{
