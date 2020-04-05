@@ -7,16 +7,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@EnableMongoRepositories(basePackageClasses = {EmployeesRepository.class})
+@EnableMongoRepositories(basePackageClasses = EmployeesRepository.class)
 @Configuration
-public class MongoDbConfig {
+public class MongoDBConfig {
 
     @Bean
     CommandLineRunner commandLineRunner(EmployeesRepository employeesRepository){
-        return strings -> {
-            employeesRepository.save(new Employees())
+        return strings->{
+            employeesRepository.save(new Employees(1, "USER", "pass"));
+            employeesRepository.save(new Employees(2, "ADMIN", "pass"));
         };
     }
-
 
 }

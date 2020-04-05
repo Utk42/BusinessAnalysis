@@ -32,6 +32,15 @@ public class Employees {
 	private List<Employees> SubEmployees;
 	private String Password;
 
+	public Employees() {
+	}
+
+	public Employees(int id, String responsibility, String password){
+		this.id = id;
+		this.Responsibility = responsibility;
+		this.Password = password;
+	}
+
 	public int getPhoneNo() {
 		return PhoneNo;
 	}
