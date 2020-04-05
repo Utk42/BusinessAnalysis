@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Employee Hierarchy</title>
+</head>
+<section th:fragment="category">
+	<ul>
+		<li th:each="Hierarchy : ${HierarchyList}">
+			<span th:text="'Name : ' + ${Hierarchy.EmployeeName} + ', Product : ' + ${Hierarchy.Product} + ', ProductionStep : ' + ${Hierarchy.ProductionStep} + ', ProductCategory : ' + ${Hierarchy.ProductCategory} + ', Department : ' + ${Hierarchy.Department}">Main Cat</span>
+			<section th:include="@{fragment} :: category" th:with="HierarchyList=${Hierarchy.SubGenerateHierarchy}"></section>
+		</li>
+	</ul>
+</section>
